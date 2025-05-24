@@ -1,12 +1,37 @@
-# React + Vite
+# ☕ Coffee Log
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Coffee Log** is a personal coffee tracking app that allows users to log their espresso shots, pour over brews, and French press experiences. Track your brewing details, beans, machines, and grind sizes — all in one place.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Features
 
-## Expanding the ESLint configuration
+- 🕒 **Log Espresso Shots** — Record the time, brew duration, and date for each shot.
+- 🫘 **Track Coffee Beans** — Add different beans you’ve used and associate grind sizes.
+- ⚙️ **Manage Brewing Machines** — Save the machines you brew with.
+- 🔄 **Brew Methods** — Choose from Espresso, Pour Over, French Press, or Cold Brew.
+- 🎨 **Clean UI** — Fully designed in [Figma](https://figma.com/) for a modern and simple interface.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+### Frontend:
+- **React JS**
+- **Tailwind CSS**
+- **React Router**
+- **React DatePicker**
+
+### Backend:
+- **Python**
+- **FastAPI** — Exposes RESTful endpoints for managing beans, machines, and logs.
+
+---
+
+## 🚀 Getting Started
+
+### Clone the repo
+
+```bash
+git clone https://github.com/yourusername/coffee-log.git
+cd coffee-log
