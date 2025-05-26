@@ -5,26 +5,17 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-
+# For debugging CORS issues, allow all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",    
-        "http://localhost:5173",    
-        "http://localhost:5174",    
-        "http://localhost:5175",    
-        "http://localhost:8080", 
-        "https://coffee-log-mu.vercel.app"  
-    ],
+    allow_origins=["*"],  # <-- Allow all origins temporarily for testing
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
 beans = []
 shots = []
-
 
 bean_id_counter = 1
 shot_id_counter = 1
@@ -45,7 +36,6 @@ class Shot(BaseModel):
     weight_out: float
     time: float
     notes: Optional[str] = None
-
 
 @app.post("/beans/", response_model=Bean)
 def add_bean_with_slash(bean: Bean):
@@ -73,7 +63,6 @@ def delete_bean(bean_id: int):
     beans = [bean for bean in beans if bean.id != bean_id]
     return {"message": f"Bean {bean_id} deleted successfully"}
 
-
 @app.post("/shots/", response_model=Shot)
 def log_shot_with_slash(shot: Shot):
     global shot_id_counter
@@ -94,11 +83,9 @@ def get_shots_for_bean(bean_id: int):
 def get_all_shots():
     return shots
 
-
 @app.get("/")
 def read_root():
     return {"message": "Coffee Tracker API is running!", "beans_count": len(beans), "shots_count": len(shots)}
-
 
 @app.get("/beans/{bean_id}", response_model=Bean)
 def get_bean(bean_id: int):
@@ -106,7 +93,6 @@ def get_bean(bean_id: int):
         if bean.id == bean_id:
             return bean
     return {"error": "Bean not found"}
-
 
 @app.put("/beans/{bean_id}", response_model=Bean)
 def update_bean(bean_id: int, updated_bean: Bean):
