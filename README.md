@@ -28,6 +28,9 @@
 
 ---
 
+## Project Live Demo(web only)
+https://coffee-log-mu.vercel.app/
+
 ## 🚀 Getting Started
 
 ### Clone the repo
