@@ -30,7 +30,7 @@ function Beans() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8000/beans/')
+        fetch('https://pythonfastapi-pw29.onrender.com/beans')
             .then(res => res.json())
             .then(data => setBeans(data))
             .catch(err => console.error("Failed to fetch beans:", err))
@@ -48,7 +48,7 @@ function Beans() {
 
     const handleAddBean = () => {
         if (newBean.name && newBean.roaster) {
-            fetch('http://localhost:8000/beans/', {
+            fetch('https://pythonfastapi-pw29.onrender.com/beans', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newBean)

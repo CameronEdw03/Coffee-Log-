@@ -34,7 +34,7 @@ function Home() {
     useEffect(() => {
         const fetchBeans = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/beans/')
+                const response = await axios.get('https://pythonfastapi-pw29.onrender.com/beans')
                 setBeansList(response.data)
             } catch (error) {
                 console.error('Error fetching beans:', error)
